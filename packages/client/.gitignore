@@ -1,0 +1,10 @@
+node_modules
+dist/bundle.js
+dist/bundle.js.LICENSE.txt
+dist/index.html
+dist/img
+yarn-error.log
+.DS_Store
+.vscode
+.env
+src/types/graphql.ts

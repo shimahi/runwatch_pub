@@ -1,0 +1,29 @@
+{
+  "name": "runwatch",
+  "version": "1.0.0",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "client": "yarn workspace client",
+    "hasura": "yarn workspace hasura",
+    "scraper": "yarn workspace scraper"
+  },
+  "workspaces": {
+    "packages": [
+      "packages/*"
+    ],
+    "nohoist": [
+      "**/ress"
+    ]
+  },
+  "lint-staged": {
+    "./packages/client/src/**/*.{ts,tsx}": [
+      "eslint './packages/client/src/**/*.{js,jsx,ts,tsx}' --fix"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  }
+}

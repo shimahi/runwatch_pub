@@ -1,0 +1,70 @@
+module.exports = {
+  future: {
+    removeDeprecatedGapUtilities: true,
+    purgeLayersByDefault: true,
+  },
+  purge: [],
+  theme: {
+    extend: {
+      screens: {
+        xs: { max: '450px' },
+        xxl: '1780px',
+      },
+      fontSize: {
+        '7xl': '5rem',
+      },
+      colors: {
+        baseColor: '#081229',
+      },
+      fontFamily: {
+        poppins: [
+          'Poppins',
+          'Noto Sans JP',
+          'Yu Gothic',
+          '-apple-system',
+          'BlinkMacSystemFont',
+          'Helvetica Neue',
+          '游ゴシック Medium',
+          'YuGothic',
+          'YuGothicM',
+          'メイリオ',
+          'Meiryo',
+          'sans-serif',
+        ],
+        noto: [
+          'Noto Sans JP',
+          'Yu Gothic',
+          '-apple-system',
+          'BlinkMacSystemFont',
+          'Helvetica Neue',
+          '游ゴシック Medium',
+          'YuGothic',
+          'YuGothicM',
+          'メイリオ',
+          'Meiryo',
+          'sans-serif',
+        ],
+      },
+      minHeight: {
+        4: '1rem',
+        6: '1.5rem',
+        8: '2rem',
+        10: '2.5rem',
+        12: '3rem',
+        16: '4rem',
+        20: '5rem',
+        24: '6rem',
+        32: '8rem',
+        40: '10rem',
+        48: '12rem',
+        56: '14rem',
+        64: '16rem',
+      },
+      scale: {
+        101: '1.01',
+      },
+    },
+  },
+  variants: {},
+  plugins: [],
+}

@@ -1,0 +1,52 @@
+query getVideos(
+  $minutes: Int!
+  $offset: Int = 0
+  $limit: Int = 16
+  $containsDanime: Boolean = true
+  $containsNonPrime: Boolean = true
+  $minYear: Int
+  $maxYear: Int
+) {
+  videos_aggregate(
+    where: {
+      amazon: {
+        is_d_anime: { _lte: $containsDanime }
+        is_not_prime: { _lte: $containsNonPrime }
+        released_year: { _gte: $minYear, _lte: $maxYear }
+      }
+      total_minutes: { _lte: $minutes }
+    }
+  ) {
+    aggregate {
+      count
+    }
+  }
+  videos(
+    where: {
+      amazon: {
+        is_d_anime: { _lte: $containsDanime }
+        is_not_prime: { _lte: $containsNonPrime }
+        released_year: { _gte: $minYear, _lte: $maxYear }
+      }
+      total_minutes: { _lte: $minutes }
+    }
+    order_by: { total_minutes: desc, amazon: { stars: desc_nulls_last } }
+    limit: $limit
+    offset: $offset
+  ) {
+    id
+    total_minutes
+    title
+    eyecatch
+    category
+    synopsis
+    amazon {
+      processed_url
+      is_d_anime
+      is_not_prime
+      stars
+      language
+      released_year
+    }
+  }
+}

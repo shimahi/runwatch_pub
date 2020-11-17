@@ -1,0 +1,19 @@
+- table:
+    schema: public
+    name: amazon
+  object_relationships:
+  - name: video
+    using:
+      manual_configuration:
+        remote_table:
+          schema: public
+          name: videos
+        column_mapping:
+          id: amazon_id
+- table:
+    schema: public
+    name: videos
+  object_relationships:
+  - name: amazon
+    using:
+      foreign_key_constraint_on: amazon_id

@@ -1,0 +1,13 @@
+{
+  "name": "scraper",
+  "version": "1.0.0",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "execute": "poetry run python ./app/main.py",
+    "pinstall": "poetry install",
+    "padd": "poetry add",
+    "premove": "poetry remove",
+    "export": "rm -f requirements.txt && poetry export -f requirements.txt > requirements.txt"
+  }
+}
